@@ -1,0 +1,24 @@
+.header-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: black;
+}
+
+.header-wrapper img {
+    margin-left: 1em;
+}
+
+.links-div {
+    display: flex;
+    align-items: center;
+    width: 70%;
+    justify-content: space-between;
+    margin-right: 3em;
+}
+
+.links-div a {
+    color:white;
+    text-decoration: none;
+    font-weight: 700;
+}
