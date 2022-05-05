@@ -5,9 +5,9 @@ import { getUserActivity } from '../../services/api'
 import '../Activity/Activity.css'
 
 // const USER_ACTIVITY
-function Activity() {
+function Activity({ activityData}) {
 
-    const[data, setData] = useState([
+    /*const[data, setData] = useState([
         {
             day: '2020-07-01',
             kilogram: 80,
@@ -77,7 +77,7 @@ function Activity() {
         <div className='activity'>
             <p>Activité quoitidienne</p>
         <ResponsiveContainer className="activity-container" width="100%" aspect= {3}>
-            <BarChart width={500} height={300}  barSize={7} barGap={8} data={data}>
+            <BarChart width={500} height={300}  barSize={7} barGap={8} data={activityData}>
                 <CartesianGrid strokeDasharray="3 3" vertical={false} />
                 <XAxis  padding={{ left: 20, right: 20 }} tickLine={false} tickMargin={15} 
                      domain={['minData', 'maxData']}

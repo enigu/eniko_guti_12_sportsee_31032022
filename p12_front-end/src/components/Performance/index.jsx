@@ -1,13 +1,12 @@
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
+
 import '../Performance/Performance.css'
-import { useEffect, useState } from 'react'
-import { getUserPerformance } from '../../services/api'
-import { useParams } from "react-router-dom"
+import PropTypes from 'prop-types'
 
 
 //const data = const USER_PERFORMANCE
-function Performance () {
-    const[data, setData] = useState([
+function Performance ( { data, kind } ) {
+    /*const[data, setData] = useState([
         {
             
             kind: {
@@ -60,16 +59,51 @@ function Performance () {
   
 }, [id])*/
     return (
-        <ResponsiveContainer width="100%" height="100%">
-        <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
-          <PolarGrid />
-          <PolarAngleAxis dataKey={data.kind} />
-          <PolarRadiusAxis />
-          <Radar name="Mike" dataKey={data.data} stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
-        </RadarChart>
-      </ResponsiveContainer>    
+        
+        <div className='performance'>
+            <ResponsiveContainer width="100%" height="100%">
+                <RadarChart
+                    outerRadius="65%"
+                    cx="52%"
+                    cy="52%"
+                    data={data}
+                    style={{ background: '#282D30' }}
+                    startAngle={390}
+                    endAngle={30}
+                >
+                <PolarGrid radialLines={false} />    
+                <PolarAngleAxis
+                    dataKey="kind"
+                    tickFormatter={(kindNumber) => {
+                    return (
+                    typeof kindNumber === 'number' &&
+                    kind[kindNumber] &&
+                    `${kind[kindNumber].substring(0, 1).toUpperCase()}${kind[
+                    kindNumber
+                    ].substring(1)}`
+                    )
+                    }}
+                    stroke="#FFF"
+                    tickLine={false}
+                />
+                <PolarRadiusAxis axisLine={false} tick={false} />
+                <Radar
+                    dataKey="value"
+                    stroke="#ff0000"
+                    fill="#ff0101b3"
+                    fillOpacity={0.6}
+                    width={100}
+                />
+                </RadarChart>
+                </ResponsiveContainer>
+        </div>
     )
 
 } 
-export default Performance   
+export default Performance 
+
+Performance.propType = {
+    data: PropTypes.object.isRequired,
+    kind: PropTypes.object.isRequired,
+  }
             

@@ -8,8 +8,8 @@ import { useParams } from "react-router-dom"
 
 //const data = USER_AVERAGE_SESSIONS.sessions
   
-  function Sessions() {
-    const[data, setData] = useState([
+  function Sessions({sessionsData}) {
+    /*const[data, setData] = useState([
       {
         day: 1,
         sessionLength: 30
@@ -41,7 +41,7 @@ import { useParams } from "react-router-dom"
   ]
 )
 
-const { id } = useParams()
+
 
 //useEffect - calling getUserAverageSessions api from api.js
 /*useEffect(() => {
@@ -101,7 +101,7 @@ const renderLegend = (props) => {
             <LineChart
               width={300}
               height={300}
-              data={data}
+              data={sessionsData}
               margin={{ top: 10, right: 20, left: 20, bottom: 5 }}
 
 
