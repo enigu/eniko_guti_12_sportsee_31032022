@@ -59,7 +59,7 @@ const renderLegend = (props) => {
       const { payload } = props;
     
       return (
-        <ul>
+        <ul className='sessions-legend'>
           {
             payload.map((index) => (
               <li key={`item-${index}`}>Durée moyenne des sessions</li>

@@ -48,7 +48,7 @@ function User() {
                 data={data.data}
                 kind={data.kind}
             />
-            <Score score={data.score}/>
+            <Score score={user.score}/>
              
         </div>
     )

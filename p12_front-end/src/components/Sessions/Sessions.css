@@ -15,7 +15,7 @@
     list-style: none;
 }
 
-.recharts-legend-wrapper > ul > li {
+.sessions-legend > li {
     color: white;
     opacity: 0.5;
 
