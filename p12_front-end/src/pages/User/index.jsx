@@ -13,10 +13,10 @@ import { useParams } from "react-router-dom"
 
 function User() {
     const { id } = useParams()
-    const[user, setUser] = useState({})
+    const[user, setUser] = useState({userInfos:{}})
     const[activity, setActivity] = useState([])
     const[sessions, setSessions] = useState([])
-    const[data, setData] = useState([])
+    const[data, setData] = useState({ data: [], kind: {} })
     
     //useEffect - calling getUserPerformance api from api.js -- const USER_PERFORMANCE
     useEffect(() => {
@@ -41,15 +41,16 @@ function User() {
 
     return(
         <div>
-            <Welcome firstName={user.userInfos}/>
+            <Welcome userInfos={user.userInfos}/>
             <Activity activityData={activity.sessions}/>
             <Sessions sessionsData={sessions.sessions}/>
             <Performance 
-                data={data.data}
-                kind={data.kind}
+                 data={data.data}
+                 kind={data.kind}
+                
             />
-            <Score score={user.score}/>
-             
+            <Score score={user.score}/>  
+
         </div>
     )
     
