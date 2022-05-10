@@ -1,61 +1,13 @@
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Dot, ResponsiveContainer } from 'recharts'
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Dot } from 'recharts'
 import '../Sessions/Sessions.css'
-import { useEffect, useState } from 'react'
-import { getUserAverageSessions } from '../../services/api'
-import { useParams } from "react-router-dom"
-
-
 
 //const data = USER_AVERAGE_SESSIONS.sessions
   
-  function Sessions({sessionsData}) {
-    /*const[data, setData] = useState([
-      {
-        day: 1,
-        sessionLength: 30
-    },
-    {
-        day: 2,
-        sessionLength: 23
-    },
-    {
-        day: 3,
-        sessionLength: 45
-    },
-    {
-        day: 4,
-        sessionLength: 50
-    },
-    {
-        day: 5,
-        sessionLength: 0
-    },
-    {
-        day: 6,
-        sessionLength: 0
-    },
-    {
-        day: 7,
-        sessionLength: 60
-    }
-  ]
-)
-
-
-
-//useEffect - calling getUserAverageSessions api from api.js
-/*useEffect(() => {
-  
-  (async function (){
-    const data  = await getUserAverageSessions(id)
-    setData(data)
-    console.log(data)
-  })()
-  
-}, [id])*/
+function Sessions({sessionsData}) {
+   
 
 // Chart Legend (title)
-const renderLegend = (props) => {
+    const renderLegend = (props) => {
       const { payload } = props;
     
       return (
@@ -67,10 +19,10 @@ const renderLegend = (props) => {
           }
         </ul>
       );
-}
+    }
 
     //Custom Tooltip function
-    const CustomTooltip = ({ active, payload, label }) => {
+    const CustomTooltip = ({ active, payload }) => {
       if (active && payload && payload.length) {
         return (
           <div className="custom-tooltip">
@@ -87,8 +39,8 @@ const renderLegend = (props) => {
       const { cx, cy } = props;
       return (
         <>
-          <Dot r={4} cy={cy} cx={cx + 12} fill="#FFF"/>
-          <Dot r={8} cy={cy} cx={cx + 12} fill="rgba(255, 255, 255, 0.3)" />
+          <Dot r={4} cy={cy} cx={cx + 10} fill="#FFF"/>
+          <Dot r={8} cy={cy} cx={cx + 10} fill="rgba(255, 255, 255, 0.3)" />
         </>
       )
     }
@@ -96,8 +48,6 @@ const renderLegend = (props) => {
 
       return (
         <div className='average-sessions'>
-          <ResponsiveContainer className="session-container" width="100%" height="100%">
-            
             <LineChart
               width={300}
               height={300}
@@ -117,14 +67,22 @@ const renderLegend = (props) => {
               >
 
               <defs>
-                <linearGradient id="colorUv" x1="1" y1="0" x2="0" y2="0">
-                  <stop offset="10%" stopColor="#FFF" stopOpacity={1}/>
-                  <stop offset="90%" stopColor="#FFFFFF" stopOpacity={0.1}/>
+                <linearGradient id="colorUv" x1="100%" y1="0" x2="0%" y2="0">
+                  <stop offset="0%" stopColor="#FFF" />
+                  
+                  <stop offset={`${0}%`} stopColor="#FFF" />
+                  <stop offset={`${100}%`} stopColor="red" />
                 </linearGradient>
               </defs>
 
               <CartesianGrid strokeDasharray="" horizontal="" vertical=""/>
-              <XAxis dataKey="day" tickLine="false" axisLine="false"  tick={{stroke: '#FFF', fontSize: 12, opacity: 0.5}}
+              <XAxis 
+                dataKey="day" 
+                tickLine={false} 
+                axisLine={false}
+                height={30} 
+                tick={{stroke: '#FFF', fontSize: 12, opacity: 0.5}}
+                allowDataOverflow={false}
                 tickFormatter={(day) => {
                   const weekday = ['L', 'M', 'M', 'J', 'V', 'S', 'D']
                   return `${weekday[day - 1]}`
@@ -133,13 +91,10 @@ const renderLegend = (props) => {
               <YAxis hide={true} />
               <Tooltip contentStyle={{ color: "#000" }}itemStyle={{ color: "#000" }} cursor={false} active={true} content={<CustomTooltip />}  />
               <Legend verticalAlign="top" height={36} iconSize={6} content={renderLegend} width={200}/>
-              <Line type="monotone" stroke="url(#colorUv)" dataKey="sessionLength" legendType="square"  strokeWidth={2} dot={false} activeDot={<CustomizedActiveDot />} 
+              <Line type="monotone" stroke="url(#colorUv)" dataKey="sessionLength" legendType="square"  strokeWidth={2} dot={false} activeDot={<CustomizedActiveDot />}
               />
           
             </LineChart>
-        
-          
-          </ResponsiveContainer>
           </div>
     ) 
   }

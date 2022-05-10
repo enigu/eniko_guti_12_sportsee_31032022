@@ -1,0 +1,6 @@
+.performance {
+    margin: 2em 2em 2em 0em;
+}
+.performance > .recharts-wrapper {
+    border-radius: 6px;
+}

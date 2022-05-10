@@ -1,5 +1,6 @@
 //import Dashboard from "../../components/Dashboard"
 import Sessions from "../../components/Sessions"
+import "../User/User.css"
 import Activity from "../../components/Activity"
 import Welcome from "../../components/Welcome"
 import Performance from "../../components/Performance"
@@ -40,17 +41,17 @@ function User() {
     }, [id])
 
     return(
-        <div>
+        <div className="user-all-activity">
             <Welcome userInfos={user.userInfos}/>
             <Activity activityData={activity.sessions}/>
-            <Sessions sessionsData={sessions.sessions}/>
-            <Performance 
+            <div className="sessions-performance-score">
+                <Sessions sessionsData={sessions.sessions}/>
+                <Performance 
                  data={data.data}
-                 kind={data.kind}
-                
-            />
-            <Score score={user.score}/>  
-
+                 kind={data.kind}   
+                />
+                <Score score={user.score}/>  
+            </div>
         </div>
     )
     

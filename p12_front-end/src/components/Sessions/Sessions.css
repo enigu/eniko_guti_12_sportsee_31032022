@@ -1,18 +1,14 @@
 .average-sessions {
-    max-width: 400px;
-    width: auto;
+    max-width: 300px;
+    width: 300px;
     aspect-ratio: 1/1;
-    background: red;
     border-radius: 5px;
+    margin:2em;
 }
 
-.session-container {
-    background: #FF0000;
-
-}
-
-.recharts-legend-wrapper > ul {
+.sessions-legend {
     list-style: none;
+    font-weight: 600;
 }
 
 .sessions-legend > li {
@@ -20,14 +16,7 @@
     opacity: 0.5;
 
 }
-line.recharts-cartesian-axis-line {
-    color: #FF0000;
-    stroke: #FF0000;
-}
-line.recharts-cartesian-axis-tick-line {
-    color: #FF0000;
-    stroke: #FF0000;
-}
+
 .custom-tooltip{
     background: #FFF;
     
