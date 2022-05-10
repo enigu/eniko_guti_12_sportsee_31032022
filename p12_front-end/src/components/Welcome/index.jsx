@@ -1,11 +1,12 @@
 
 
-function Welcome({firstName}) {
+function Welcome({userInfos}) {
+    
     return (
         <div className='welcome'>
             <h1>
                 Bonjour
-                <span>{' ' + firstName}</span>
+                <span>{' ' + userInfos.firstName}</span>
             </h1>
             <p> Félicitations, vous avez explosé vos objectifs hier </p>
 
