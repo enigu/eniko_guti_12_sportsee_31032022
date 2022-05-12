@@ -4,3 +4,7 @@
 .user-all-activity {
     max-width: 1100px;
 }
+.info-wrapper {
+    display: flex;
+    align-items: stretch;   
+}

@@ -4,6 +4,7 @@ import bike from  '../../assets/bike.svg'
 import weight from  '../../assets/weight.svg'
 import '../../components/Sidebar/Sidebar.css'
 
+
 function Sidebar() {
     let currentDate = new Date();
     let year = currentDate.getFullYear();

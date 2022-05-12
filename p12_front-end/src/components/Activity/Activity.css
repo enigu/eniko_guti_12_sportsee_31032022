@@ -1,12 +1,14 @@
 .activity {
     position: relative;
     z-index: -1;
-    width: auto;
+    width: 960px;
+    margin-right: 2em;
 }
 .activity > .recharts-wrapper {
     padding-top: 2.5em;
     background-color: #FBFBFB;
-    margin: 2em;
+    margin: 2em 2em 0em 2em;
+    border-radius: 6px;
 }
 .activity > .recharts-wrapper > svg.recharts-surface{
     margin-left: 2em;
