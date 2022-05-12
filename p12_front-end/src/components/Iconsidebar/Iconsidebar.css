@@ -1,10 +1,14 @@
+.inconsidebar-wrapper {
+    height: 1028px;
+}
 .calories-wrapper {
     display: flex;
     background-color: #FBFBFB;
     justify-content: space-evenly;
-    margin: 2em;
+    margin: 2em 2em 3.3em 2em;
     padding: 1em;
     width: 16em;
+    border-radius: 6px;
 }
 
 .calories-count h2 {

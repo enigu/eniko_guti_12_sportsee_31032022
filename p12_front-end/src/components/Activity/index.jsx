@@ -21,7 +21,7 @@ function Activity({ activityData}) {
             
             <p>Activité quoitidienne</p>
         
-            <BarChart width={960} height={300}  barSize={7} barGap={8} data={activityData}>
+            <BarChart width={970} height={260}  barSize={7} barGap={8} data={activityData}>
                 <CartesianGrid strokeDasharray="3 3" vertical={false} />
                 <XAxis  
                     padding={{ left: 20, right: 20 }} 

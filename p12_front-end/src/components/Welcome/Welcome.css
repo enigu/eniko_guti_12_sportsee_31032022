@@ -1,0 +1,10 @@
+.welcome {
+    margin-left: 6em;
+    margin-top: 2em;
+}
+
+.welcome span {
+    color: #FF0000;
+    font-size: 50px; 
+    font-weight: 600;
+}

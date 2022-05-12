@@ -1,7 +1,7 @@
 .activity {
     position: relative;
     z-index: -1;
-    width: 960px;
+    width: 950px;
     margin-right: 2em;
 }
 .activity > .recharts-wrapper {
@@ -12,7 +12,7 @@
 }
 .activity > .recharts-wrapper > svg.recharts-surface{
     margin-left: 2em;
-    width: 850px;
+    width: 950px;
 }
 .activity > .recharts-wrapper > .recharts-legend-wrapper {
     padding-top: 1em;

@@ -13,7 +13,7 @@ function Performance( { data, kind } ) {
         <div className='performance'>
           <RadarChart  
             width={300} 
-            height={300} 
+            height={290} 
             outerRadius="65%" 
             cx="52%"
             cy="52%"

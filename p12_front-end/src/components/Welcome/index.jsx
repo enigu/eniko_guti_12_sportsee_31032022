@@ -1,4 +1,4 @@
-
+import '../../components/Welcome/Welcome.css'
 
 function Welcome({userInfos}) {
     
@@ -8,7 +8,7 @@ function Welcome({userInfos}) {
                 Bonjour
                 <span>{' ' + userInfos.firstName}</span>
             </h1>
-            <p> Félicitations, vous avez explosé vos objectifs hier </p>
+            <p> Félicitations! vous avez explosé vos objectifs hier </p>
 
         </div>
     )

@@ -3,8 +3,12 @@
 }
 .user-all-activity {
     max-width: 1100px;
+    margin-left: 6em;
 }
 .info-wrapper {
     display: flex;
-    align-items: stretch;   
+    align-items: stretch;
+}
+.recharts-graphs {
+    margin-left: 4em;
 }

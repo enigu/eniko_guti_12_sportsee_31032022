@@ -50,7 +50,7 @@ function Sessions({sessionsData}) {
         <div className='average-sessions'>
             <LineChart
               width={300}
-              height={300}
+              height={290}
               data={sessionsData}
               margin={{ top: 10, right: 20, left: 20, bottom: 5 }}
 
