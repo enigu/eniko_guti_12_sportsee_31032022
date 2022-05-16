@@ -1,5 +1,10 @@
 import '../../components/Welcome/Welcome.css'
 
+/**
+ * 
+ * @param {*} param0 
+ * @returns 
+ */
 function Welcome({userInfos}) {
     
     return (

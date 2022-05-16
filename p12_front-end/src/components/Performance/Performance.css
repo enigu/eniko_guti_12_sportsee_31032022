@@ -1,6 +1,9 @@
 .performance {
-    margin: 2em 2em 2em 0em;
+    margin: 1em 1.5em 2em 0em;
 }
 .performance > .recharts-wrapper {
     border-radius: 6px;
+}
+text.recharts-text.recharts-polar-angle-axis-tick-value {
+    font-size: 12px;
 }

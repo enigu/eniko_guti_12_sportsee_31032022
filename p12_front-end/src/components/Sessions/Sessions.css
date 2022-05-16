@@ -1,8 +1,9 @@
 .average-sessions {
-    width: 300px;
+    width: 240px;
+    height: 220px;
     aspect-ratio: 1/1;
     border-radius: 5px;
-    margin:2em;
+    margin: 1em 1.5em 1.5em 1.5em;
 }
 
 .sessions-legend {
@@ -13,7 +14,6 @@
 .sessions-legend > li {
     color: white;
     opacity: 0.5;
-
 }
 
 .custom-tooltip{

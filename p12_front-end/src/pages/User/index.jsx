@@ -17,12 +17,38 @@ function User() {
     const { id } = useParams()
     const[user, setUser] = useState({
         userInfos:{},
-        score: {},
-        keyData: {},
+        score: {todayScore: 0.0,},
+        keyData: {
+            calorieCount:0,
+            proteinCount:0,
+            carbohydrateCount:0,
+            lipidCount:0,
+        },
     })
-    const[activity, setActivity] = useState([])
+    const[activity, setActivity] = useState({
+        sessions: [
+            {day: '2020-07-01', kilogram: 80, calories: 240},
+            {day: '2020-07-02', kilogram: 80, calories: 220},
+            {day: '2020-07-03', kilogram: 81, calories: 280},
+            {day: '2020-07-04', kilogram: 81, calories: 290},
+            {day: '2020-07-05', kilogram: 80, calories: 160},
+            {day: '2020-07-06', kilogram: 78, calories: 162},
+            {day: '2020-07-07', kilogram: 76, calories: 390},
+        ]
+
+    }   
+    )
     const[sessions, setSessions] = useState([])
-    const[data, setData] = useState({ data: [], kind: {} })
+    const[data, setData] = useState(
+        { data: [
+            {value: 0, kind: 1},
+            {value: 0, kind: 2},
+            {value: 0, kind: 3},
+            {value: 0, kind: 4},
+            {value: 0, kind: 5},
+            {value: 0, kind: 6},
+        ], 
+        kind: {} })
     
     //useEffect - calling getUserPerformance api from api.js -- const USER_PERFORMANCE
     useEffect(() => {
@@ -56,8 +82,8 @@ function User() {
                         <Performance 
                             data={data.data}
                             kind={data.kind}   
-                        />
-                        <Score score={user.score}/>  
+    />
+                        <Score score={user.todayScore}/>  
                     </div>
                 </div>
                 <Iconsidebar

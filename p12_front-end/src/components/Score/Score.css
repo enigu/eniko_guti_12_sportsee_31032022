@@ -1,9 +1,9 @@
 .score {
     background-color: #FBFBFB;
     position:relative;
-    width: 300px;
-    height: 290px;
-    margin: 2em 2em 2em 0em;
+    width: 240px;
+    height: 220px;
+    margin: 1em 0em 2em 0em;
     border-radius: 6px;
 }
 .score > .recharts-wrapper {

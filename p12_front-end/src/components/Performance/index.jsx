@@ -1,5 +1,4 @@
-import { Radar, RadarChart, Legend, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer} from 'recharts';
-
+import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer} from 'recharts'
 import '../Performance/Performance.css'
 import PropTypes from 'prop-types'
 
@@ -12,8 +11,8 @@ function Performance( { data, kind } ) {
     return (
         <div className='performance'>
           <RadarChart  
-            width={300} 
-            height={290} 
+            width={240} 
+            height={220} 
             outerRadius="65%" 
             cx="52%"
             cy="52%"
@@ -44,15 +43,12 @@ function Performance( { data, kind } ) {
           </RadarChart>             
         </div>        
     )
-}   
-
-
+}
 export default Performance 
-
 Performance.propType = {
     data: PropTypes.object.isRequired,
     kind: PropTypes.object.isRequired,
-  }
+}
 
 
 

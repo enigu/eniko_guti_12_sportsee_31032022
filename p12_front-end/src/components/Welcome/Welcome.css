@@ -1,10 +1,17 @@
 .welcome {
-    margin-left: 6em;
-    margin-top: 2em;
+    margin-left: 4em;
+    margin-top: 0.5em;
 }
 
 .welcome span {
     color: #FF0000;
-    font-size: 50px; 
+}
+
+.welcome h1 {
+    font-size: 38px; 
     font-weight: 600;
+    margin-bottom: 0px;
+}
+.welcome p {
+    margin-bottom: 0px;
 }

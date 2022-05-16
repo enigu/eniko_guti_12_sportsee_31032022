@@ -1,5 +1,4 @@
 import { PieChart, Pie, Legend, Cell } from 'recharts';
-
 import '../Score/Score.css'
 import PropTypes from 'prop-types'
 
@@ -40,11 +39,10 @@ function Score( {score}) {
                 </div>
             )
         }
-    
-       
+           
         return (
             <div className="score">                 
-                <PieChart width={300} height={290} >
+                <PieChart width={240} height={220} >
                 <Pie
                     data={data}
                     dataKey="value"

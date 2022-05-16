@@ -1,5 +1,6 @@
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Dot } from 'recharts'
 import '../Sessions/Sessions.css'
+import PropTypes from 'prop-types'
 
 //const data = USER_AVERAGE_SESSIONS.sessions
   
@@ -49,10 +50,10 @@ function Sessions({sessionsData}) {
       return (
         <div className='average-sessions'>
             <LineChart
-              width={300}
-              height={290}
+              width={240}
+              height={220}
               data={sessionsData}
-              margin={{ top: 10, right: 20, left: 20, bottom: 5 }}
+              margin={{ top: 10, right: 20, left: 20, bottom: 15 }}
 
 
               onMouseMove={(e) => {
@@ -100,5 +101,7 @@ function Sessions({sessionsData}) {
   }
   export default Sessions
 
-  
+  Sessions.propType = {
+    sessionsData: PropTypes.object.isRequired,
+}
   
