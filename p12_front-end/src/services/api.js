@@ -1,3 +1,4 @@
+import Error from '../pages/Error'
 
 let baseURL = "http://localhost:3000/User/"
 
@@ -17,7 +18,7 @@ async function getUserById(id) {
         return json.data    
     }
     catch(error) {
-        console.error(`Could not get user: ${error}`);
+        console.log(error);
     } 
 }
 
@@ -64,7 +65,6 @@ async function getUserAverageSessions(id) {
 }
 
 //const USER_PERFORMANCE
-
 async function getUserPerformance(id) {
 
     const url = baseURL + `${id}/performance` 

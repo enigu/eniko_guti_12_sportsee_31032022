@@ -17,20 +17,21 @@
 }
 .score-label {
     position: absolute;
-    top: 43%;
-    left: 43%;
+    top: 38%;
+    left: 40%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
 }
 .score-number {
     font-weight: 700;
-    font-size: 22px;
+    font-size: 20px;
     margin-bottom: 2px;
 }
 .score-text {
     font-weight: 600;
-    font-size: 18px;
+    font-size: 12px;
     opacity: 0.5;
-    width: 4em;
+    width: 5em;
+    margin-top: 0px;
 }

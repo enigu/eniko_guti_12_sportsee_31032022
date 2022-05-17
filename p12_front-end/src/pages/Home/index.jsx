@@ -1,11 +1,11 @@
-
-
+import "../Home/Home.css"
 
 
 function Home() {
   return (
-    <div>
-      <p>Welcome</p>
+    <div className="home">
+      <h1>Welcome Page </h1>
+      <p>Hello dear user</p>
     </div>
   )
 }

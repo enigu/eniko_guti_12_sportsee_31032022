@@ -8,7 +8,7 @@
 }
 .info-wrapper {
     display: flex;
-    align-items: stretch;
+    align-items: center;
     margin-top: 0px;
 }
 .recharts-graphs {

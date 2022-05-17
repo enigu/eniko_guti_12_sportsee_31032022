@@ -6,6 +6,7 @@ import Welcome from "../../components/Welcome"
 import Performance from "../../components/Performance"
 import Score from "../../components/Score"
 import Iconsidebar from "../../components/Iconsidebar"
+import Error from '../Error'
 import { useEffect, useState } from 'react'
 import { getUserById, getUserActivity, getUserAverageSessions, getUserPerformance  } from '../../services/api'
 import { useParams } from "react-router-dom"
@@ -27,13 +28,13 @@ function User() {
     })
     const[activity, setActivity] = useState({
         sessions: [
-            {day: '2020-07-01', kilogram: 80, calories: 240},
-            {day: '2020-07-02', kilogram: 80, calories: 220},
-            {day: '2020-07-03', kilogram: 81, calories: 280},
-            {day: '2020-07-04', kilogram: 81, calories: 290},
-            {day: '2020-07-05', kilogram: 80, calories: 160},
-            {day: '2020-07-06', kilogram: 78, calories: 162},
-            {day: '2020-07-07', kilogram: 76, calories: 390},
+            {day: '2020-07-01', kilogram: 0, calories: 0},
+            {day: '2020-07-03', kilogram: 0, calories: 0},
+            {day: '2020-07-02', kilogram: 0, calories: 0},
+            {day: '2020-07-04', kilogram: 0, calories: 0},
+            {day: '2020-07-05', kilogram: 0, calories: 0},
+            {day: '2020-07-06', kilogram: 0, calories: 0},
+            {day: '2020-07-07', kilogram: 0, calories: 0},
         ]
 
     }   
@@ -49,52 +50,84 @@ function User() {
             {value: 0, kind: 6},
         ], 
         kind: {} })
-    
+    const [error, setError] = useState(false)
+
     //useEffect - calling getUserPerformance api from api.js -- const USER_PERFORMANCE
     useEffect(() => {
   
         (async function (){
             //const USER_MAIN_DATA
             const user = await  getUserById(id)
-            setUser(user)
+            user !== 404 && 
+            user !== undefined &&
+            user !== 'can not get user' ?
+            setUser(user): 
+            setError(true)
             console.log(user)
+
+        
+            //const USER_ACTIVITY
             const activity  = await getUserActivity(id)
-            setActivity(activity)
+            activity !== 404 && 
+            activity !== undefined &&
+            activity !== 'can not get user' ?
+            setActivity(activity):
+            setError(true)
             console.log(activity)
+
+            //const USER_AVERAGE_SESSIONS
             const sessions = await getUserAverageSessions(id)
-            setSessions(sessions)
+            sessions !== 404 && 
+            sessions !== undefined &&
+            sessions !== 'can not get user' ?
+            setSessions(sessions):
+            setError(true)
             console.log(sessions)
+
+            //const USER_PERFORMANCE
             const data  = await getUserPerformance(id)
-            setData(data)
+            data !== 404 && 
+            data !== undefined &&
+            data !== 'can not get user' ?
+            setData(data):
+            setError(true)
             console.log(data)
     })()
   
     }, [id])
 
-    return(
-        <div className="user-all-activity">
-            <Welcome userInfos={user.userInfos}/>
-            <div className="info-wrapper">
-                <div className="recharts-graphs">
-                    <Activity activityData={activity.sessions}/>
-                    <div className="sessions-performance-score">
-                        <Sessions sessionsData={sessions.sessions}/>
-                        <Performance 
-                            data={data.data}
-                            kind={data.kind}   
-    />
-                        <Score score={user.todayScore}/>  
+    if (error) {
+        return <Error />
+      }
+
+    else {
+        return(
+            <div className="user-all-activity">
+                <Welcome userInfos={user.userInfos}/>
+                <div className="info-wrapper">
+                    <div className="recharts-graphs">
+                        <Activity activityData={activity.sessions}/>
+                        <div className="sessions-performance-score">
+                            <Sessions sessionsData={sessions.sessions}/>
+                            <Performance 
+                                data={data.data}
+                                kind={data.kind}   
+        />
+                            <Score score={user.todayScore}/>  
+                        </div>
                     </div>
+                    <Iconsidebar
+                        caloriesNumber={user.keyData.calorieCount}
+                        proteinNumber={user.keyData.proteinCount}
+                        carbsNumber={user.keyData.carbohydrateCount}
+                        fatNumber={user.keyData.lipidCount}
+                    />
                 </div>
-                <Iconsidebar
-                    caloriesNumber={user.keyData.calorieCount}
-                    proteinNumber={user.keyData.proteinCount}
-                    carbsNumber={user.keyData.carbohydrateCount}
-                    fatNumber={user.keyData.lipidCount}
-                />
             </div>
-        </div>
-    )
+        )
+
+    }  
+    
     
 }
 export default User

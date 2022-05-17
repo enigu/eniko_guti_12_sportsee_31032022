@@ -11,6 +11,7 @@ import './index.css'
 import Home from './pages/Home'
 import Header from './components/Header'
 import Sidebar from './components/Sidebar'
+import UserNumber from './components/UserNumber'
 import Error from './pages/Error/index'
 import reportWebVitals from './reportWebVitals'
 import User from './pages/User'
@@ -22,6 +23,7 @@ root.render(
   <Sidebar />
     <Routes>
       <Route exact path="/" element={<Home />} />
+      <Route path="/User" element={<UserNumber />} />
       <Route path="/User/:id" element={<User />} />
       <Route path="*" element={<Error />} />
     </Routes>

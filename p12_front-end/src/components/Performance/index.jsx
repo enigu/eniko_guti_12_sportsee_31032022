@@ -1,4 +1,4 @@
-import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer} from 'recharts'
+import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis } from 'recharts'
 import '../Performance/Performance.css'
 import PropTypes from 'prop-types'
 

@@ -68,11 +68,11 @@ function Sessions({sessionsData}) {
               >
 
               <defs>
-                <linearGradient id="colorUv" x1="100%" y1="0" x2="0%" y2="0">
+                <linearGradient id="colorUv" x1="0%" y1="0" x2="100%" y2="0">
                   <stop offset="0%" stopColor="#FFF" />
                   
-                  <stop offset={`${0}%`} stopColor="#FFF" />
-                  <stop offset={`${100}%`} stopColor="red" />
+                  <stop offset={`${0}%`} stopColor="red" />
+                  <stop offset={`${100}%`} stopColor="#FFF" />
                 </linearGradient>
               </defs>
 
@@ -82,7 +82,7 @@ function Sessions({sessionsData}) {
                 tickLine={false} 
                 axisLine={false}
                 height={30} 
-                tick={{stroke: '#FFF', fontSize: 12, opacity: 0.5}}
+                tick={{ fill: '#FFF', fontSize: 12, opacity: 0.5}}
                 allowDataOverflow={false}
                 tickFormatter={(day) => {
                   const weekday = ['L', 'M', 'M', 'J', 'V', 'S', 'D']
@@ -92,7 +92,13 @@ function Sessions({sessionsData}) {
               <YAxis hide={true} />
               <Tooltip contentStyle={{ color: "#000" }}itemStyle={{ color: "#000" }} cursor={false} active={true} content={<CustomTooltip />}  />
               <Legend verticalAlign="top" height={36} iconSize={6} content={renderLegend} width={200}/>
-              <Line type="monotone" stroke="url(#colorUv)" dataKey="sessionLength" legendType="square"  strokeWidth={2} dot={false} activeDot={<CustomizedActiveDot />}
+              <Line 
+                type="monotone" 
+                stroke="url(#colorUv)" 
+                dataKey="sessionLength" 
+                legendType="square"  
+                strokeWidth={2} dot={false} 
+                activeDot={<CustomizedActiveDot />}
               />
           
             </LineChart>
