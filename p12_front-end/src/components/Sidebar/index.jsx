@@ -4,6 +4,10 @@ import bike from  '../../assets/bike.svg'
 import weight from  '../../assets/weight.svg'
 import '../../components/Sidebar/Sidebar.css'
 
+/**
+ * @description Component Sidebar showing 4 icons
+ * @returns {React.ReactElement}
+ */
 
 function Sidebar() {
     let currentDate = new Date();

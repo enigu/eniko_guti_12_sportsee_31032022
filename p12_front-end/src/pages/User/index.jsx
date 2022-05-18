@@ -1,18 +1,24 @@
 
-import Sessions from "../../components/Sessions"
+//CSS
 import "../User/User.css"
+//Components
+import Sessions from "../../components/Sessions"
 import Activity from "../../components/Activity"
 import Welcome from "../../components/Welcome"
 import Performance from "../../components/Performance"
 import Score from "../../components/Score"
 import Iconsidebar from "../../components/Iconsidebar"
 import Error from '../Error'
+//React
 import { useEffect, useState } from 'react'
 import { getUserById, getUserActivity, getUserAverageSessions, getUserPerformance  } from '../../services/api'
 import { useParams } from "react-router-dom"
 
 
-
+/**
+ * @description User page
+ * @returns {React.ReactElement}
+ */
 
 function User() {
     const { id } = useParams()
@@ -26,19 +32,7 @@ function User() {
             lipidCount:0,
         },
     })
-    const[activity, setActivity] = useState({
-        sessions: [
-            {day: '2020-07-01', kilogram: 0, calories: 0},
-            {day: '2020-07-03', kilogram: 0, calories: 0},
-            {day: '2020-07-02', kilogram: 0, calories: 0},
-            {day: '2020-07-04', kilogram: 0, calories: 0},
-            {day: '2020-07-05', kilogram: 0, calories: 0},
-            {day: '2020-07-06', kilogram: 0, calories: 0},
-            {day: '2020-07-07', kilogram: 0, calories: 0},
-        ]
-
-    }   
-    )
+    const[activity, setActivity] = useState({})
     const[sessions, setSessions] = useState([])
     const[data, setData] = useState(
         { data: [

@@ -7,14 +7,18 @@ import {
   Routes
 } 
 from "react-router-dom"
-import './index.css'
+import reportWebVitals from './reportWebVitals'
+//Pages
 import Home from './pages/Home'
+import User from './pages/User'
+import Error from './pages/Error/index'
+//Components
 import Header from './components/Header'
 import Sidebar from './components/Sidebar'
 import UserNumber from './components/UserNumber'
-import Error from './pages/Error/index'
-import reportWebVitals from './reportWebVitals'
-import User from './pages/User'
+//CSS
+import './index.css'
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"))
 root.render(

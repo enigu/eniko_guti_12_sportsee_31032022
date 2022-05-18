@@ -1,5 +1,10 @@
+//CSS
 import "../Home/Home.css"
 
+/**
+ * @description home page
+ * @returns {ReactElement}
+ */
 
 function Home() {
   return (

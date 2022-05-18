@@ -1,8 +1,19 @@
 import Error from '../pages/Error'
 
+/**
+ * Fetch every endpoints for components
+ * Return promises
+ */
+
 let baseURL = "http://localhost:3000/User/"
 
-//const USER_MAIN_DATA
+/**
+ * @description async function to get user's main data: const USER_MAIN_DATA
+ * @param { string } id 
+ * @returns { promise }
+ * @async
+ */
+
 async function getUserById(id) {
 
     const url = baseURL + `${id}`
@@ -22,9 +33,13 @@ async function getUserById(id) {
     } 
 }
 
+/**
+ * @description async function to get user's activity: const USER_ACTIVITY
+ * @param { string } id 
+ * @returns { promise }
+ * @async
+ */
 
-
-//const USER_ACTIVITY
 async function getUserActivity(id) {
     
     const url = baseURL + `${id}/activity` 
@@ -44,7 +59,13 @@ async function getUserActivity(id) {
     } 
 }
 
-//const USER_AVERAGE_SESSIONS
+/**
+ * @description async function to get user's average sessions: const USER_AVERAGE_SESSIONS
+ * @param { string } id 
+ * @returns { promise }
+ * @async
+ */
+
 async function getUserAverageSessions(id) {
 
     const url = baseURL + `${id}/average-sessions` 
@@ -64,7 +85,13 @@ async function getUserAverageSessions(id) {
     } 
 }
 
-//const USER_PERFORMANCE
+/**
+ * @description async function to get user's performance: const USER_PERFORMANCE
+ * @param { string } id 
+ * @returns { promise }
+ * @async
+ */
+
 async function getUserPerformance(id) {
 
     const url = baseURL + `${id}/performance` 

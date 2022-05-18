@@ -2,7 +2,11 @@ import { PieChart, Pie, Legend, Cell } from 'recharts';
 import '../Score/Score.css'
 import PropTypes from 'prop-types'
 
-
+/**
+ * @description Custom component to Score PieChart: renderLegend
+ * @param {Object} props 
+ * @returns {React.ReactElement}
+ */
 
 const renderLegend = (props) => {
     const { payload } = props
@@ -22,6 +26,12 @@ const renderLegend = (props) => {
         </ul>
     )
 }
+
+/**
+ * @description Component showing user's daily score 
+ * @param {Object} propTypes
+ * @returns {React.ReactElement}
+ */
 function Score( {score}) {   
     const percentageScore = score * 100
 

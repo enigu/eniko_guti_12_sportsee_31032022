@@ -2,6 +2,10 @@ import '../Header/Header.css'
 import logo from  '../../assets/logo.svg'
 import { NavLink } from 'react-router-dom';
 
+/**
+ * @description header with navlinks - navigation on the website
+ * @returns {React.ReactElement}
+ */
 
 function Header() {
     return (

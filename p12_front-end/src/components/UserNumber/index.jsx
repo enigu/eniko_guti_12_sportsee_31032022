@@ -1,5 +1,10 @@
+//CSS
 import "../UserNumber/UserNumber.css"
 
+/**
+ * @description User page component
+ * @returns {ReactElement}
+ */
 
 function UserNumber() {
   return (

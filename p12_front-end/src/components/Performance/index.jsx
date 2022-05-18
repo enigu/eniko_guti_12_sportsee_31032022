@@ -2,10 +2,13 @@ import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis } from 'r
 import '../Performance/Performance.css'
 import PropTypes from 'prop-types'
 
-
-
-//const data = const USER_PERFORMANCE
-
+/**
+ * @description - component showing users's performance(const data = const USER_PERFORMANCE) 
+ * @param {Object} propTypes 
+ * @param {Object} propTypes.data
+ * @param {Object} propTypes.kind
+ * @returns {React.ReactElement}
+ */
 function Performance( { data, kind } ) {
  
     return (

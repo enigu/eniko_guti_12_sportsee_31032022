@@ -5,7 +5,15 @@ import fat from  '../../assets/fat-icon.svg'
 import '../../components/Iconsidebar/Iconsidebar.css'
 import PropTypes from 'prop-types'
 
-
+/**
+ * @description component listing calories, proteines, glucides, lipides with an icon and data
+ * @param {Object} propTypes 
+ * @param {Object} propTypes.caloriesNumber
+ * @param {Object} propTypes.proteinNumber
+ * @param {Object} propTypes.carbsNumber
+ * @param {Object} propTypes.fatNumber
+ * @returns {React.ReactElement}
+ */
 function Iconsidebar({caloriesNumber, proteinNumber, carbsNumber, fatNumber}) {
     return(
         <div className="iconsidebar-wrapper">

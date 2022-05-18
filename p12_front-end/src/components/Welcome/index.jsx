@@ -1,8 +1,8 @@
 import '../../components/Welcome/Welcome.css'
-
+import PropTypes from 'prop-types'
 /**
- * 
- * @param {*} param0 
+ * @description Component Welcome showinf user's firstname
+ * @param {Object} propTypes
  * @returns 
  */
 function Welcome({userInfos}) {
@@ -20,3 +20,7 @@ function Welcome({userInfos}) {
 
 }
 export default Welcome
+
+Welcome.propType = {
+    userInfos: PropTypes.object.isRequired,
+}

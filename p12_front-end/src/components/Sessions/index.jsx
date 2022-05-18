@@ -2,50 +2,67 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Dot } fr
 import '../Sessions/Sessions.css'
 import PropTypes from 'prop-types'
 
-//const data = USER_AVERAGE_SESSIONS.sessions
-  
-function Sessions({sessionsData}) {
-   
 
-// Chart Legend (title)
-    const renderLegend = (props) => {
-      const { payload } = props;
-    
-      return (
-        <ul className='sessions-legend'>
-          {
-            payload.map((index) => (
-              <li key={`item-${index}`}>Durée moyenne des sessions</li>
-            ))
-          }
-        </ul>
-      );
-    }
+/**
+ * @description Chart Legend (title) function
+ * @param {Object} props 
+ * @returns {React.ReactElement}
+ */
+const renderLegend = (props) => {
+  const { payload } = props;
 
-    //Custom Tooltip function
-    const CustomTooltip = ({ active, payload }) => {
-      if (active && payload && payload.length) {
-        return (
-          <div className="custom-tooltip">
-            <p className="label">{`${payload[0].value}min`}</p> 
-          </div>
-        );
+  return (
+    <ul className='sessions-legend'>
+      {
+        payload.map((index) => (
+          <li key={`item-${index}`}>Durée moyenne des sessions</li>
+        ))
       }
-    
-      return null;
-    };
+    </ul>
+  );
+}
 
-    //Custom Active Dot function
-    const CustomizedActiveDot = (props) => {
-      const { cx, cy } = props;
-      return (
-        <>
-          <Dot r={4} cy={cy} cx={cx + 10} fill="#FFF"/>
-          <Dot r={8} cy={cy} cx={cx + 10} fill="rgba(255, 255, 255, 0.3)" />
-        </>
-      )
-    }
-  
+/**
+ * @description Custom Tooltip function
+ * @param {Boolean} - active: if line hovered true
+ *  @param {Object} - payload
+ * @returns {React.ReactElement}
+ */
+
+const CustomTooltip = ({ active, payload }) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className="custom-tooltip">
+        <p className="label">{`${payload[0].value}min`}</p> 
+      </div>
+    );
+  }
+
+  return null;
+};
+
+/**
+ * @description Custom Active Dot function
+ *  @param {Object} - props
+ * @returns {React.ReactElement}
+ */
+
+const CustomizedActiveDot = (props) => {
+  const { cx, cy } = props;
+  return (
+    <>
+      <Dot r={4} cy={cy} cx={cx + 10} fill="#FFF"/>
+      <Dot r={8} cy={cy} cx={cx + 10} fill="rgba(255, 255, 255, 0.3)" />
+    </>
+  )
+}
+
+/**
+ * @description - component showing users's sessions(const data = USER_AVERAGE_SESSIONS.sessions) 
+ * @param {Object} propTypes 
+ * @returns {React.ReactElement}
+ */
+function Sessions({sessionsData}) {
 
       return (
         <div className='average-sessions'>

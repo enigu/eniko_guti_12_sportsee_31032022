@@ -1,21 +1,36 @@
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts'
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts'
 import '../Activity/Activity.css'
 import PropTypes from 'prop-types'
+import React from 'react'
+
+/**
+     * @description -Custom component to Recharts graph - CustomToolTip
+     * @param {Boolean} - active: if bar hovered true
+     * @param {Object} - payload
+     * @returns {React.ReactElement}
+ */
+
+const CustomTooltip = ({ active, payload }) => {
+    if (active && payload && payload.length) {
+        return (
+            <div className="tooltip">
+                <p className="kg">{payload[0].value}kg</p>
+                <p className="calories">{payload[1].value}Kcal</p>
+            </div>
+        )
+    }
+    return null;
+}
 
 // const USER_ACTIVITY
-function Activity({ activityData}) {
 
-    const CustomTooltip = ({ active, payload }) => {
-        if (active && payload && payload.length) {
-            return (
-                <div className="tooltip">
-                    <p className="kg">{payload[0].value}kg</p>
-                    <p className="calories">{payload[1].value}Kcal</p>
-                </div>
-            )
-        }
-        return null;
-    }
+/**
+ * Daily activity barchart
+ * @param {Object} PropTypes
+ * @returns {React.ReactElement}
+ */
+function Activity({ activityData}) {
+    
 
     return (
         <div className='activity'>
