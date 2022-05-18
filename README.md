@@ -11,11 +11,11 @@ npm install yarn
 2. Project launch:
  - clone the repository: https://github.com/enigu/eniko_guti_12_sportsee_31032022
  
-2.1 Launch Back-end:
+ 2.1 Launch Back-end:
   - go to the p12_back-end file and run the command yarn install in order to install all the dependencies
   - run the command yarn dev and magic will happen on port 3000
   
-2.2 Launch Front-end:
+ 2.2 Launch Front-end:
   - open a new terminal window
   - go to the p12_front-end file and run npm install in order to install all the dependencies
   - in the terminal window, you will see the message : ? something is already running on port 3000. Would you like to run the app on another port instead       >> (Y/n)
