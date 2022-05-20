@@ -1,38 +1,60 @@
 .activity {
-    position: relative;
-    z-index: -1;
+    /*position: relative;*/
+    /*z-index: -1;*/
     margin-right: 2em;
     width:auto;
+    background-color: #FBFBFB;
+    padding-top: 0.2em;
+    padding-bottom: 0.6em;
+    padding-left: 1.5em;
+    margin-top: 1em;
+    border-radius: 6px;
 }
-.activity > .recharts-wrapper {
-    padding-top: 2.5em;
+.activity > .recharts-responsive-container > .recharts-wrapper > .recharts-surface {
+    margin-top: 1em;
+}
+.activity > .recharts-responsive-container > .recharts-wrapper > .recharts-legend-wrapper {
+    margin-top: -1.5em;
+    margin-right: 1em;
+}
+/*.activity > .recharts-wrapper {
     background-color: #FBFBFB;
     margin: 2em 2em 0em 2em;
     border-radius: 6px;
-}
-.activity > .recharts-wrapper > svg.recharts-surface{
+}*/
+/*.activity > .recharts-wrapper > svg.recharts-surface{
     margin-left: 2em;
     width: auto;
-}
+}*/
 
-.activity > .recharts-wrapper > .recharts-legend-wrapper {
+/*.activity > .recharts-wrapper > .recharts-legend-wrapper {
     padding-top: 1em;
-}
-.activity > .recharts-wrapper > .recharts-legend-wrapper > ul {
+    margin-top: 5em;
+}*/
+/*.activity > .recharts-wrapper > .recharts-legend-wrapper > ul {
     opacity: 0.6;
     font-weight: 600;
-    padding-top: 1em;
-}
-.activity > .recharts-wrapper > .recharts-legend-wrapper > ul > li > span.recharts-legend-item-text{
-    color: black !important;
+}*/
+ul.recharts-default-legend {
+    opacity: 0.5;
+    font-weight: 600;
+    color:black;
 }
 
+li.recharts-legend-item.legend-item-1 > span.recharts-legend-item-text {
+    color: black !important;
+}
+/*.activity > .recharts-wrapper > .recharts-legend-wrapper > ul > li > span.recharts-legend-item-text{
+    color: black !important;
+}*/
+
 .activity p {
-    margin-bottom: -3.2em;
     font-weight: 600;
-    margin-left: 4em;
-    position:absolute;
-    z-index: 1;
+    margin-left: 1em;
+    margin-bottom: 0px;
+    margin-top: 2em;
+    /*position:absolute;
+    z-index: 1;*/
 }
 
 .tooltip {
@@ -41,15 +63,32 @@
     text-align: center;
     margin-top: 1em;
 }
+.tooltip p:first-child {
+    margin-top: -5px;
+}
 
 .tooltip p {
     color: white;
-    font-size: 8px;
-    padding: 4px 4px 6px 6px;
-    text-align: center; 
+    font-size: 9px;
+    margin-left: 5px;
+    margin-top: 22px;
 }
 line.recharts-cartesian-axis-line {
     color: black;
 }
+
+/*@media (max-width: 780px) { 
+    .activity {
+        width: 650px;
+    }
+    .activity > .recharts-wrapper { 
+        margin: 0;
+        width: 650px;
+    }
+    .activity > .recharts-wrapper > svg.recharts-surface{
+        width: 650px;
+    }
+        
+}*/
 
 

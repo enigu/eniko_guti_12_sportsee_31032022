@@ -1,4 +1,4 @@
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Dot } from 'recharts'
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Dot, ResponsiveContainer } from 'recharts'
 import '../Sessions/Sessions.css'
 import PropTypes from 'prop-types'
 
@@ -30,7 +30,9 @@ const renderLegend = (props) => {
  */
 
 const CustomTooltip = ({ active, payload }) => {
+  console.log("tata", active, payload)
   if (active && payload && payload.length) {
+
     return (
       <div className="custom-tooltip">
         <p className="label">{`${payload[0].value}min`}</p> 
@@ -66,6 +68,7 @@ function Sessions({sessionsData}) {
 
       return (
         <div className='average-sessions'>
+          <ResponsiveContainer >
             <LineChart
               width={240}
               height={220}
@@ -119,7 +122,8 @@ function Sessions({sessionsData}) {
               />
           
             </LineChart>
-          </div>
+          </ResponsiveContainer>
+        </div>
     ) 
   }
   export default Sessions
