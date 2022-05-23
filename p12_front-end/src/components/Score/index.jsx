@@ -52,7 +52,7 @@ function Score( {score}) {
            
         return (
             <div className="score">                 
-                <PieChart width={240} height={220} >
+                <PieChart width={230} height={220} >
                 <Pie
                     data={data}
                     dataKey="value"

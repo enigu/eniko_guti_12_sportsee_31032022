@@ -95,7 +95,7 @@ function User() {
       }
 
     else {
-        return(
+        return( 
             <div className="user-all-activity">
                 <Welcome userInfos={user.userInfos}/>
                 <div className="info-wrapper">

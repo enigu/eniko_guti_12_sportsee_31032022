@@ -14,7 +14,7 @@ function Performance( { data, kind } ) {
     return (
         <div className='performance'>
           <RadarChart  
-            width={240} 
+            width={230} 
             height={220} 
             outerRadius="65%" 
             cx="52%"

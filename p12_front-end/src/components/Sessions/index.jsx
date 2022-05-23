@@ -70,7 +70,7 @@ function Sessions({sessionsData}) {
         <div className='average-sessions'>
           <ResponsiveContainer >
             <LineChart
-              width={240}
+              width={230}
               height={220}
               data={sessionsData}
               margin={{ top: 10, right: 20, left: 20, bottom: 15 }}
